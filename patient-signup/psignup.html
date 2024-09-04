@@ -97,48 +97,7 @@
     </div>
 
     <!-- Firebase Script -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-analytics.js";
-        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
-
-        const firebaseConfig = {
-          apiKey: "AIzaSyBlLLPvziy_omkGwlaxsbtS8Kb29637KmM",
-          authDomain: "swasthik-sih.firebaseapp.com",
-          projectId: "swasthik-sih",
-          storageBucket: "swasthik-sih.appspot.com",
-          messagingSenderId: "1046285450890",
-          appId: "1:1046285450890:web:3c90cf995920b9eb0a3773",
-          measurementId: "G-P2G3SYJF6B"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-        const auth = getAuth(app);
-
-        document.getElementById('psignupForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirmPassword').value;
-
-            if (password !== confirmPassword) {
-                document.getElementById('passwordMatchMessage').style.display = 'block';
-                return;
-            }
-
-            try {
-                await createUserWithEmailAndPassword(auth, email, password);
-                alert('Sign-up successful!');
-                // Redirect or perform additional actions on successful sign-up
-                window.location.href = '../patient-dashboard/pdash.html'; // Redirect to patient dashboard
-            } catch (error) {
-                alert(`Error: ${error.message}`);
-            }
-        });
-        
-    </script>
+    <script type="module" src="psignup.js"></script>
 
 </body>
 </html>
