@@ -1,0 +1,284 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Custom font */
+body {
+    font-family: 'Roboto', 'SF Pro Display', 'Proxima', 'Helvetica Neue', sans-serif;
+    background-color: #F9FBFF;
+    color: #1E293B;
+    line-height: 1.6;
+}
+
+/* Navbar Toggle Button */
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.navbar-toggle-icon {
+    width: 30px;
+    height: 3px;
+    background-color: #1E293B;
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-right {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #bcf8ec61;
+        width: 100%;
+        padding: 1rem;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-right.active {
+        display: flex;
+    }
+
+    .navbar-toggle {
+        display: flex;
+    }
+}
+
+/* Toggle Icon Transformation */
+.navbar-toggle.active .navbar-toggle-icon:nth-child(1) {
+    transform: rotate(45deg);
+    position: relative;
+    top: 8px;
+}
+
+.navbar-toggle.active .navbar-toggle-icon:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggle.active .navbar-toggle-icon:nth-child(3) {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -8px;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navigation Bar */
+header {
+    background-color: #bcf8ec61;
+    padding: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: -1rem; /* Adjust this value to move logo more left */
+}
+
+.navbar-brand {
+    background-color: #6900f243;
+    color: #1E293B;
+    padding: 0.5rem 1rem;
+    border-radius: 0.6rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.navbar-right {
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar-link {
+    background-color: #DF5A21;
+    color: #1E293B;
+    padding: 0.5rem 1rem;
+    border-radius: 0.6rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    opacity: 0.85;
+    text-decoration: none;
+    transition: opacity 0.3s, background-color 0.3s;
+}
+
+.navbar-link.hospital {
+    background-color: #0D9393;
+}
+
+.navbar-link:hover {
+    opacity: 1;
+    background-color: #E94E1B;
+    transform: scale(1.07);
+}
+
+.navbar-link.hospital:hover {
+    opacity: 1;
+    background-color: #10b6b6;
+    transform: scale(1.07);
+}
+
+.navbar-link.features {
+    background-color: #1E293B; /* New color for Features link */
+    color: white;
+}
+
+/* Login Container */
+.plogin-container {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin-top: 20px;
+    height: 100vh;
+    background-color: #F9FBFF;
+}
+
+/* Login Card */
+.plogin-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 97%;
+    height: 1000px;
+    padding: 2rem;
+    background: linear-gradient(to right, #0d939356, #691b9a56);
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 0;  /* Remove any margin */
+}
+
+/* Login Form */
+.plogin-form {
+    margin-top: 10%;
+    margin-left: 15%;
+    width: 70%;
+    height: 89%;
+    background-color: rgba(30, 41, 59, 0.151);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.plogin-form h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #1E293B;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form-group-inline {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #1E293B;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+small {
+    font-size: 0.875rem;
+    color: #6B7280;
+}
+
+.button-group {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.signup-button {
+    background-color: #df5a219e;
+    color: #ffffff;
+    font-size: 1.125rem;
+    font-weight: bold;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.signup-button:hover {
+    background-color: #DF5A21;
+    transform: scale(1.07);
+}
+
+.plogin-img {
+    width: 100%;
+    margin-right: 3%;
+    margin-left: auto;
+    height: auto;
+    border-radius: 15px;
+}
+
+
+/* Gender Radio Group */
+.gender-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.gender-group label {
+    margin-right: 1rem;
+    font-weight: bold;
+    color: #1E293B;
+}
+
+.gender-options {
+    display: flex;
+    gap: 2rem;
+    margin-left: 1rem;
+}
+
+.gender-options label {
+    font-weight: normal;
+    color: #1E293B;
+    cursor: pointer;
+    text-align: center;
+}
+
+.gender-options input[type="radio"] {
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+

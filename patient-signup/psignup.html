@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up Page</title>
+    <link rel="stylesheet" href="psignup.css">
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <header>
+        <div class="container navbar">
+            <div class="navbar-left">
+                <div class="navbar-brand">
+                    Smart HRMS
+                </div>
+            </div>
+            <div class="navbar-right">
+                <a href="../Landing-page/landing.html" class="navbar-link features">Back</a>
+                <a href="./plogin.html" class="navbar-link">Patient Login</a>
+                <a href="#" class="navbar-link hospital">Hospital Login</a>
+            </div>
+            <div class="navbar-toggle" id="navbar-toggle">
+                <span class="navbar-toggle-icon"></span>
+                <span class="navbar-toggle-icon"></span>
+                <span class="navbar-toggle-icon"></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="plogin-container">
+        <div class="plogin-card">
+            <div class="plogin-form">
+                <h1>Sign Up</h1>
+                <form id="psignupForm">
+                    <div class="form-group-inline">
+                        <div class="form-group">
+                            <label for="firstName">First Name*</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="middleName">Middle Name</label>
+                            <input type="text" id="middleName" name="middleName">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group-inline">
+                        <div class="form-group">
+                            <label for="countryCode">Code*</label>
+                            <input type="text" id="countryCode" name="countryCode" value="+91" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="mobileNumber">Mobile no.*</label>
+                            <input type="text" id="mobileNumber" name="mobileNumber" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password <span class="required-asterisk">*</span></label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password <span class="required-asterisk">*</span></label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        <small id="passwordMatchMessage" style="color: red; display: none;">Passwords do not match</small>
+                    </div>
+                    <div class="form-group gender-group">
+                        <label for="gender">Gender*</label>
+                        <div class="gender-options">
+                            <label>
+                                <input type="radio" id="male" name="gender" value="male" required> Male
+                            </label>
+                            <label>
+                                <input type="radio" id="female" name="gender" value="female" required> Female
+                            </label>
+                            <label>
+                                <input type="radio" id="other" name="gender" value="other" required> Other
+                            </label>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button type="submit" class="signup-button"><strong>Sign Up</strong></button>
+                    </div>
+                </form>
+            </div>
+            <div>
+                <img class="plogin-img" src="./plogin.png" alt="Login Image">
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase Script -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-analytics.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
+
+        const firebaseConfig = {
+          apiKey: "AIzaSyBlLLPvziy_omkGwlaxsbtS8Kb29637KmM",
+          authDomain: "swasthik-sih.firebaseapp.com",
+          projectId: "swasthik-sih",
+          storageBucket: "swasthik-sih.appspot.com",
+          messagingSenderId: "1046285450890",
+          appId: "1:1046285450890:web:3c90cf995920b9eb0a3773",
+          measurementId: "G-P2G3SYJF6B"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth(app);
+
+        document.getElementById('psignupForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (password !== confirmPassword) {
+                document.getElementById('passwordMatchMessage').style.display = 'block';
+                return;
+            }
+
+            try {
+                await createUserWithEmailAndPassword(auth, email, password);
+                alert('Sign-up successful!');
+                // Redirect or perform additional actions on successful sign-up
+                window.location.href = '../patient-dashboard/pdash.html'; // Redirect to patient dashboard
+            } catch (error) {
+                alert(`Error: ${error.message}`);
+            }
+        });
+        
+    </script>
+
+</body>
+</html>

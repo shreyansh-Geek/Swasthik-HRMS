@@ -1,0 +1,672 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Custom font */
+body {
+    font-family: 'Roboto', 'SF Pro Display', 'Proxima', 'Helvetica Neue', sans-serif;
+    background-color: #F9FBFF;
+    color: #1E293B;
+    line-height: 1.6;
+}
+
+/* Navbar Toggle Button */
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.navbar-toggle-icon {
+    width: 30px;
+    height: 3px;
+    background-color: #1E293B;
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-right {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #bcf8ec61;
+        width: 100%;
+        padding: 1rem;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-right.active {
+        display: flex;
+    }
+
+    .navbar-toggle {
+        display: flex;
+    }
+}
+
+/* Toggle Icon Transformation */
+.navbar-toggle.active .navbar-toggle-icon:nth-child(1) {
+    transform: rotate(45deg);
+    position: relative;
+    top: 8px;
+}
+
+.navbar-toggle.active .navbar-toggle-icon:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggle.active .navbar-toggle-icon:nth-child(3) {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -8px;
+}
+
+.feature-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to right, #bcf8ec84,#691b9a3b);
+}
+
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navigation Bar */
+header {
+    background-color: #bcf8ec61;
+    padding: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: -1rem; /* Adjust this value to move logo more left */
+}
+
+.navbar-brand {
+    background-color: #6900f243;
+    color: #1E293B;
+    padding: 0.5rem 1rem;
+    border-radius: 0.6rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.navbar-right {
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar-link {
+    background-color: #DF5A21;
+    color: #1E293B;
+    padding: 0.5rem 1rem;
+    border-radius: 0.6rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    opacity: 0.85;
+    text-decoration: none;
+    transition: opacity 0.3s, background-color 0.3s;
+}
+
+.navbar-link.hospital {
+    background-color: #0D9393;
+}
+
+.navbar-link:hover {
+    opacity: 1;
+    background-color: #E94E1B;
+    transform: scale(1.07);
+}
+
+.navbar-link.hospital:hover {
+    opacity: 1;
+    background-color: #10b6b6;
+    transform: scale(1.07);
+}
+
+.navbar-link.features {
+    background-color: #1E293B; /* New color for Features link */
+    color: white;
+}
+/* Main Section */
+main {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.welcome-text {
+    margin-bottom: 1rem;
+}
+
+.welcome-text h1 {
+    font-size: 4.5rem;
+    font-weight: 800;
+    color: #1E293B;
+}
+
+/* Icon and Text Section */
+.icon-text-section {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #D9EFFF;
+    color: #0493D0 ;
+    padding: 0.75rem 1rem;
+    border-radius: 9999px;
+    font-size: 1rem;
+    line-height: 1.75rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.icon-text-section img {
+    width: 3rem;
+    height: 3rem;
+    margin-right: 0.5rem;
+}
+
+/* Content Section */
+.content-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 960px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.content-text {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    text-align: left; /* Align text to the left */
+}
+
+.content-text p {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #1E293B;
+    display: inline;
+    vertical-align: middle;
+}
+
+.built-for {
+    display: inline;
+    font-size: 2.2rem; /* Increased font size */
+    margin-top: 1rem; /* Margin for spacing */
+    font-weight: bolder;
+    vertical-align: middle;
+}
+
+.typing-effect {
+    display: inline;
+    font-weight: bolder;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    color: #0493D0;
+    border-right: 2px solid #1E293B;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: blink-caret 0.75s step-end infinite;
+    vertical-align: middle;
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #1E293B;
+    }
+}
+
+.content-image {
+    width: 100%;
+    max-width: 100%; /* Adjust image width to container */
+    height: auto;
+    margin-top: 0rem;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .content-section {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .content-text {
+        width: 100%;
+        padding-right: 0rem;
+    }
+
+    .content-image {
+        width: 100%; /* Adjust image width to paragraph width */
+        max-width: 100%; /* Ensure image does not exceed container width */
+        padding-left: 0rem;
+    }
+}
+
+/* Benefits Tags Container */
+.benefits-tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Increased gap for better spacing */
+    justify-content: center;
+    margin-top: 24px;
+    max-width: 100%;
+}
+
+/* Individual Benefit Tag */
+.benefit-tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: medium;
+    color: #1E293B; /* Adjust color as needed */
+    padding: 0.75rem 1rem;
+    background-color: #D9EFFF;
+    border-radius: 0.75rem;
+}
+
+.benefit-icon {
+    width: 24px; /* Slightly larger icon */
+    margin-right: 8px; /* Increased margin for better spacing */
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+    .benefit-tag {
+        font-size: 14px;
+        line-height: 18px;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .benefit-icon {
+        width: 20px;
+        margin-right: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .benefit-tag {
+        font-size: 12px;
+        line-height: 16px;
+        padding: 0.5rem 0.5rem;
+    }
+
+    .benefit-icon {
+        width: 18px;
+        margin-right: 4px;
+    }
+}
+
+
+
+
+/* Feature Section */
+.features-section {
+    padding: 4rem 1rem;
+    background-color: #F9FBFF;
+    text-align: center;
+}
+
+/* Heading */
+.features-heading {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1E293B;
+}
+
+/* Feature Grid */
+.features-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap to the next row */
+    justify-content: space-between; /* Space cards evenly */
+    gap: 2rem;
+    max-width: 1770px;
+    margin: 0 auto;
+}
+
+/* Feature Card */
+.feature-card {
+    background: #d9efffb4 ;
+    color: #1E293B;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 90%; 
+    margin: 2rem auto;
+    opacity: 0;
+    transform: translateY(20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInUp 0.6s forwards;
+}
+
+/* Feature Content */
+.feature-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 1440px;
+    width: 100%;
+    padding: 0 2rem;
+}
+
+/* Feature Image */
+.feature-image {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature-image img {
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+}
+
+/* Feature Text */
+.card-text {
+    width: 50%;
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-title {
+    font-size: 34px;
+    font-weight: bold;
+    color: #0493D0;
+    margin-bottom: 1rem;
+}
+
+.card-description {
+    font-size: 18px;
+    font-weight: 500;
+    color: #64748B;
+    margin-bottom: 1.5rem;
+}
+
+/* Fade-in Animation */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation Delay for Each Card */
+.feature-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.feature-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.feature-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.feature-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.feature-card:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.feature-card:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .feature-card {
+        width: 100%; /* Full width on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .features-grid {
+        flex-direction: column;
+    }
+
+    .feature-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-image img {
+        margin-bottom: 1rem;
+        margin-right: 0;
+    }
+}
+
+
+
+/* FAQ Section */
+.faq-section {
+    padding: 4rem 1rem;
+    background-color: #FFFFFF;
+    text-align: center;
+}
+
+/* Heading */
+.faq-heading {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1E293B;
+}
+
+/* FAQ Grid */
+.faq-grid {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* FAQ Item */
+.faq-item {
+    border: 1px solid #E2E8F0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* FAQ Question */
+.faq-question {
+    background-color: #F1F5F9;
+    color: #1E293B;
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: 1rem;
+    text-align: left;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #E2E8F0;
+}
+
+/* FAQ Answer */
+.faq-answer {
+    background-color: #FFFFFF;
+    color: #4B5563;
+    font-size: 1rem;
+    padding: 1rem;
+    display: none;
+}
+
+/* Show Answer */
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+
+
+/* Chatbot Button */
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;  /* Distance from the bottom */
+    right: 40px;   /* Increased the value to shift it left from the right edge */
+    width: 80px;   /* Increased the size of the button */
+    height: 80px;  /* Increased the size of the button */
+    background-color: #1E293B; /* Circular background */
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for better visibility */
+    z-index: 1000;  /* Ensure it stays on top of other elements */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
+}
+
+/* Chatbot Image */
+.chatbot-icon {
+    width: 85%;
+    height: 85%;
+    border-radius: 50%; /* Ensure the image is circular */
+}
+
+/* Hover Effect */
+.chatbot-container:hover {
+    transform: scale(1.1); /* Slightly scale up the button */
+}
+
+.chatbot-container::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 2px solid rgba(30, 41, 59, 0.5); /* Circular lines with some transparency */
+    border-radius: 50%;
+    animation: rotate 2s linear infinite; /* Rotating animation */
+    z-index: -1; /* Place it behind the button */
+}
+
+/* Rotate Animation */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Footer Section */
+.footer-section {
+    background-color: #1E293B; /* Dark background color */
+    color: #FFFFFF; /* White text color */
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+
+/* Footer Logo */
+.footer-logo img {
+    width: 150px; /* Adjust the logo size */
+    margin-bottom: 1rem;
+}
+
+/* Footer Links */
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-links ul li {
+    display: inline;
+}
+
+.footer-links ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #BCF8EC; /* Color on hover */
+}
+
+/* Footer Social Icons */
+.footer-social a {
+    margin: 0 10px;
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.footer-social a img {
+    width: 30px; /* Adjust the icon size */
+}
+
+.footer-social a:hover {
+    transform: scale(1.1); /* Scale effect on hover */
+}
+
+/* Footer Copyright */
+.footer-copyright {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    line-height: 1.5;
+}
+
+
