@@ -4,8 +4,190 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient-Dashboard</title>
+    <link rel="stylesheet" href="pdash.css">
 </head>
 <body>
-    <img width="100%" src="./Screenshot 2024-09-04 050231.png" alt="">
+    <!-- Top Navigation Bar -->
+
+    <header>
+        <div class="container navbar">
+            <div class="navbar-left">
+                <div class="navbar-brand">
+                    Smart HRMS
+                </div>
+            </div>
+            <div class="navbar-right">
+                <a href="./pdash.html" class="navbar-link hpme">Home</a>
+                <a href="#features" class="navbar-link features">Features</a>
+
+                
+            </div>
+            <div class="navbar-toggle" id="navbar-toggle">
+                <span class="navbar-toggle-icon"></span>
+                <span class="navbar-toggle-icon"></span>
+                <span class="navbar-toggle-icon"></span>
+            </div>
+        </div>
+    </header>
+
+
+<!-- Patient Details Card -->
+<div class="patient-details-container">
+    <div class="details-card">
+        <div class="card-header">
+            <h2 style="font-weight: 700;">PATIENT DETAILS</h2>
+        </div>
+        <div class="card-content">
+            <div class="patient-info">
+                <div class="info-item">
+                    <img src="./id-card.png" alt="Full Name Icon">
+                    <p><strong>Full Name:</strong> <span id="fullName">__________</span></p>
+                </div>
+                <div class="info-item">
+                    <img src="./add-contact.png" alt="Contact Icon">
+                    <p><strong>Contact No.:</strong> <span id="contactNo">__________</span></p>
+                </div>
+                <div class="info-item">
+                    <img src="./email.png" alt="Email Icon">
+                    <p><strong>Email:</strong> <span id="email">__________</span></p>
+                </div>
+                <div class="info-item">
+                    <img src="./male-and-female.png" alt="Gender Icon">
+                    <p><strong>Gender:</strong> <span id="gender">__________</span></p>
+                </div>
+            </div>
+            <div class="patient-photo">
+                <img src="./profile-photo (1).png" alt="Patient Photo">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div id="#features" class="features">
+        <!-- Queue Number Check Card -->
+        <div class="queue-card-container">
+            <div class="queue-card">
+                <div class="queue-card-image">
+                    <img src="./opd queue.png" alt="Queue Image">
+                </div>
+                <div class="queue-card-content">
+                    <h2>Check Queue number in OPD</h2>
+                    <input type="text" placeholder="Enter Your Token ID" id="queueNumberInput">
+                    <button id="checkQueueButton" onclick="location.href='../pqueue-check/pqueue.html' ">Check</button>
+                </div>
+                
+            </div>
+        </div>
+    
+    
+        <!-- Patient Pre-Admission Form Card -->
+    <div class="pre-admission-card-container">
+        <div class="pre-admission-card">
+            
+            <div 
+            class="pre-admission-content">
+                <h2>Pre-Admission in IPD</h2>
+                <p>Complete your IPD registration by filling out the necessary details.</p>
+                <button onclick="location.href='../pipd-admit/padmit.html'">Apply</button>
+            </div>
+            <div class="pre-admission-image">
+                <img src="./ipd admisssion.png" alt="Pre-Admission Image">
+            </div>
+        </div>
+    </div>
+            
+    <!--Check Bed Availability-->
+    <div class="bed-availability-card-container">
+        <div class="bed-availability-card">
+            <div class="bed-availability-image">
+                <img src="./bed availability.png" alt="Bed Availability">
+            </div>
+            <div class="bed-availability-content">
+                <h2>Check Bed Availability</h2>
+                <p>Enter your details to check bed availability in the hospital.</p>
+                <button onclick="location.href='../pbeds-av/pbeds.html'">Check</button>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <!--Health Records Card-->
+    <div class="health-records-card-container">
+        <div class="health-records-card">
+            <div class="health-records-content">
+                <h2>Upload Health Records</h2>
+                <p>Save your health records digitally and find all your past medical records in one place.</p>
+                <button onclick="location.href='../precords/precords.html'">Upload</button>
+            </div>
+            <div class="health-records-image">
+                <img src="./upload records.png" alt="Upload Health Records">
+            </div>
+        </div>
+    </div>
+    
+    
+    <!--Feeedback Mechanism card-->
+    <div class="feedback-form-card-container">
+        <div class="feedback-form-card">
+            <div class="feedback-form-image">
+                <img src="./feedback mech.png" alt="Feedback Form">
+            </div>
+            <div class="feedback-form-content">
+                <h2>Feedback Form</h2>
+                <p>We value your feedback. Please take a moment to let us know how satisfied you are with our services.</p>
+                <button onclick="location.href='../pfeedback-mech/pfeedback.html'">Give Feedback</button>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+ <!--Chatbot section-->
+        <div class="chatbot-container">
+            <img src="chatbot-for-healthcare-interaction-and-support---.png" alt="Chatbot" class="chatbot-icon">
+        </div>
+        
+
+
+        <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <!-- Replace with Swasthik logo if available -->
+                <img src="smart_hrms_logo.png" alt="Swasthik Logo">
+            </div>
+
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms & Conditions</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <a href="#"><img src="./fb.png" alt="Facebook"></a>
+                <a href="https://twitter.com/Shreyanshloop07" target="_blank"><img src="./twitter.png" alt="Twitter"></a>
+                <a href="https://www.linkedin.com/in/shreyansh-pandit-1b47b2203/" target="_blank"><img src="./linkedin.png" alt="LinkedIn"></a>
+            </div>
+
+            <div class="footer-copyright">
+                <p>&copy; 2024 Swasthik. All rights reserved. | A Smart India Hackathon project on Smart HRMS named Swasthik.</p>
+                <p>Developed with <span style="color: red;">❤</span> by Team <strong>AlgoWizards</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    </main>
+
 </body>
 </html>

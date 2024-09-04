@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPD Queue</title>
+    <link rel="stylesheet" href="pqueue.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Check Your Queue Number & Estimated Wait Time</h2>
+        <input type="text" id="tokenIDInput" placeholder="Enter Your Token ID">
+        <button id="checkButton">Check Status</button>
+
+        <div id="resultContainer" class="result" style="display:none;">
+            <p><strong>Queue Number:</strong> <span id="queueNumber">N/A</span></p>
+            <p><strong>Estimated Wait Time:</strong> <span id="waitTime">N/A</span></p>
+        </div>
+
+        <p id="errorMessage" class="error"></p>
+    </div>
+
+    <script src="./pqueue.js"></script>
+
+</body>
+
+</html>

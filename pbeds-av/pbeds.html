@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #BCF8EC, #6A1B9A);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .coming-soon-container {
+            max-width: 600px;
+            padding: 40px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .progress-bar-inner {
+            height: 15px;
+            width: 50%; /* Update this percentage based on the development progress */
+            background-color: #FF6B6B;
+            border-radius: 10px;
+            animation: loading 2s ease-in-out infinite;
+        }
+
+        @keyframes loading {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: 50%;
+            }
+        }
+
+        .back-button {
+            padding: 10px 20px;
+            background-color: #FF6B6B;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .back-button:hover {
+            background-color: #FF5252;
+        }
+    </style>
+</head>
+<body>
+    <div class="coming-soon-container">
+        <h1>Coming Soon!</h1>
+        <p>This page is currently under development. Stay tuned for updates!</p>
+        <div class="progress-bar">
+            <div class="progress-bar-inner"></div>
+        </div>
+        <a href="../patient-dashboard/pdash.html" class="back-button">Back to Home</a>
+    </div>
+</body>
+</html>

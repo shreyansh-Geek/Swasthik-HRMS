@@ -643,12 +643,10 @@ header {
 
 /* Footer Section */
 .footer-section {
-    margin-top: 7%;
     background-color: #1E293B; /* Dark background color */
     color: #FFFFFF; /* White text color */
     padding: 2rem 1rem;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .footer-content {
