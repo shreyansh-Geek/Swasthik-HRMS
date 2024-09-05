@@ -49,14 +49,14 @@ document.getElementById('psignupForm').addEventListener('submit', async (e) => {
     }
 });
 // realtime collection data
-getDocs(colRef)
-  .then(snapshot => {
-    let Patients = []
-    snapshot.docs.forEach(doc => {
-      Patients.push({ ...doc.data(), id: doc.id })
-    })
-    console.log(Patients)
-  })
+// getDocs(colRef)
+//   .then(snapshot => {
+//     let Patients = []
+//     snapshot.docs.forEach(doc => {
+//       Patients.push({ ...doc.data(), id: doc.id })
+//     })
+//     console.log(Patients)
+//   })
 
 // adding docs
 document.getElementById('psignupForm').addEventListener('submit', function(event) {
@@ -66,10 +66,14 @@ document.getElementById('psignupForm').addEventListener('submit', function(event
     const email = document.getElementById('email').value;
     const mobileNumber = document.getElementById('mobileNumber').value;
     const gender = document.querySelector('input[name="gender"]:checked').value;
+    const middleName = document.getElementById('middleName').value;
+    const lastName = document.getElementById('lastName').value;
     
     try {
         addDoc(colRef, {
             firstName: firstName,
+            mName : middleName,
+            lName : lastName,
             email: email,
             mobileNumber : mobileNumber,
             gender: gender
