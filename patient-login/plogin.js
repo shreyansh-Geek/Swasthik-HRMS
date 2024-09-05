@@ -50,7 +50,7 @@ onAuthStateChanged(auth, (user) => {
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/auth.user
     const email = user.email;
-    alert("You are already Logged in ID: ", email)
+    alert("You are Logged in ID: ", email)
     window.location.replace('../patient-dashboard/pdash.html');
     // ...
   } else {

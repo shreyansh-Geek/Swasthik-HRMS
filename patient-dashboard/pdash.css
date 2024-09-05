@@ -352,7 +352,7 @@ header {
     border-radius: 7px;
     cursor: pointer;
     font-size: 20px;
-}
+  }
 
 .pre-admission-content button:hover {
     background-color: #FF5252;
