@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient-Dashboard</title>
     <link rel="stylesheet" href="hdash.css">
+    <link rel="stylesheet" href="../hqueue-track/hqueue.css">
 </head>
 <body>
     <!-- Top Navigation Bar -->
@@ -31,57 +32,44 @@
         </div>
     </header>
 
+<div class="container">
+    <link rel="stylesheet" href="../hqueue-track/hqueue.css">
+    <div class="queue-info">
+        <h2>Total Patients Now in Queue:</h2>
+        <div class="queue-box" id="queueCount">0</div>
+    </div>
+    <h1 class="title" id="noQueue">Next Patient in Queue</h1>
 
-<!-- Patient Details Card -->
-<div class="hospital-details-container">
-    <div class="details-card">
-        <div class="card-header">
-            <h2 style="font-weight: 700;">HOSPITAL DETAILS</h2>
+    <div class="patient-info">
+        <!-- Patient Personal Details -->
+        <div class="patient-details">
+            <h3>Patient Details</h3>
+            <p><strong>Name:</strong> <span id="patientName">Loading....</span></p>
+            <p><strong>Contact Number:</strong> <span id="patientContact">Please wait...</span></p>
+            <p><strong>Email:</strong> <span id="patientEmail">Loading...</span></p>
+            <p><strong>Gender:</strong> <span id="patientGender">Please wait...</span></p>
         </div>
-        <div class="card-content">
-            <div class="hospital-info">
-                <div class="info-item">
-                    <img src="./id-card.png" alt="Full Name Icon">
-                    <p><strong>Hospital Name:</strong> <span id="fullName">__________</span></p>
-                </div>
-                <div class="info-item">
-                    <img src="./add-contact.png" alt="Contact Icon">
-                    <p><strong>Contact No.:</strong> <span id="contactNo">__________</span></p>
-                </div>
-                <div class="info-item">
-                    <img src="./email.png" alt="Email Icon">
-                    <p><strong>Email:</strong> <span id="email">__________</span></p>
-                </div>
-                <div class="info-item">
-                    <img src="./id-card.png" alt="Gender Icon">
-                    <p><strong>Address:</strong> <span id="gender">__________</span></p>
-                </div>
-            </div>
-            <div class="hospital-photo">
-                <img src="./hospital-building.png" alt="Patient Photo">
-            </div>
+
+        <!-- Patient Health Details -->
+        <div class="health-details">
+            <h3>Health Details</h3>
+            <p><strong>Temperature:</strong> <span id="patientTemperature">--</span></p>
+            <p><strong>Blood Pressure:</strong> <span id="patientBloodPressure">--</span></p>
+            <p><strong>Oxygen Levels:</strong> <span id="patientOxygen">--</span></p>
         </div>
+    </div>
+
+    <div class="button-container">
+        <button id="nextPatientButton">Next Patient</button>
     </div>
 </div>
 
-
+<script type ="module" src="../hqueue-track/hqueue.js"></script>
 
 
 <div id="#features" class="features">
         <!-- Queue Number Check Card -->
-        <div class="queue-card-container">
-            <div class="queue-card">
-                <div class="queue-card-image">
-                    <img src="./card-5.png" alt="Queue Image">
-                </div>
-                <div class="queue-card-content">
-                    <h2>Hospital OPD Section</h2>
-                    <p class="next-in-queue">Click for Doctor's Fast queue Tracking</p>
-                    <button id="checkQueueButton" onclick="location.href='../hqueue-track/hqueue.html' ">Proceed</button>
-                </div>
-                
-            </div>
-        </div>
+        
     
     
         <!-- Patient Pre-Admission Form Card -->
@@ -130,21 +118,6 @@
         </div>
     </div>
     
-    
-    <!--Feeedback Mechanism card-->
-    <div class="feedback-form-card-container">
-        <div class="feedback-form-card">
-            <div class="feedback-form-image">
-                <img src="./feedback mech.png" alt="Feedback Form">
-            </div>
-            <div class="feedback-form-content">
-                <h2>Feedback Form</h2>
-                <p>We value your feedback. Please take a moment to let us know how satisfied you are with our services.</p>
-                <button onclick="location.href='../pfeedback-mech/pfeedback.html'">Tap to Continue</button>
-            </div>
-            
-        </div>
-    </div>
 </div>
 
 

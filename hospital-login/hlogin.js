@@ -42,7 +42,7 @@ form.addEventListener('submit', async (event) => {
         await signInWithEmailAndPassword(auth, email, password);
         if (docSnap.exists()) {
             if (docSnap.data().email.includes(email)) {
-                window.location.replace('../');
+                window.location.replace('../hospital-dashboard/hdash.html');
               } else {
                 alert("You Donot have permission to login into the hospital")
               }

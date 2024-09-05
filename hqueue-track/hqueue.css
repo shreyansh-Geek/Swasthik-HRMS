@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
@@ -8,27 +8,23 @@ body {
     justify-content: center;
     height: 100vh;
     background-color: #f8f9fa;
-}
+} */
 
 .container {
-    width: 50%;
-    max-width: 800px;
-    padding: 40px;
+    width: 80%;
+    margin-top: 30px;
+    padding: 20px;
     background-color: #fff;
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.container:hover {
-    transform: translateY(-10px);
+    
 }
 
 .title {
     font-size: 28px;
     font-weight: 700;
-    margin-bottom: 30px;
+    margin-bottom: 3px;
     color: #333;
 }
 
@@ -36,7 +32,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 3px;
 }
 
 .queue-info h2 {
