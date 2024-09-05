@@ -3,11 +3,10 @@ import { getAuth,
   onAuthStateChanged, signOut
 } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
 import {
-  getFirestore, collection, onSnapshot,
-  addDoc, deleteDoc, doc, getDocs,
+  getFirestore, collection, onSnapshot, getDoc, updateDoc,
+  addDoc, deleteDoc, doc, getDocs,serverTimestamp, increment, arrayUnion, arrayRemove,
   query, where
 } from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js'
-
 const firebaseConfig = {
   apiKey: "AIzaSyBlLLPvziy_omkGwlaxsbtS8Kb29637KmM",
   authDomain: "swasthik-sih.firebaseapp.com",
@@ -20,9 +19,15 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-const colRef = collection(db, 'Patients');
 const auth = getAuth(app);
 
+const colRef = collection(db, 'Patients');
+const docRef = collection(db, 'Doctors');
+const queRef = collection(db, 'Queues');
+const appRef = collection(db, 'Appointments');
+let PatientID = "currently not assigned";
+const userdetails = []
+let inQueueFlag = false;
 //Javascript for Authentication & Authorization
 document.addEventListener('DOMContentLoaded', () => {
   onAuthStateChanged(auth, (user) => {
@@ -33,8 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
       getDocumentIdByField(email)
         .then(userdetails => {
           displayPatientsDetails(userdetails);
+          checkFlag();
         });
-      
+        
       //displayPatientsDetails(getDocumentIdByField(email));
 
     } else {
@@ -43,7 +49,27 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = "../patient-login/plogin.html";
     }
   });
+
+  
 });
+
+async function checkFlag() {
+  const q = query(appRef, where("PatientID", "==", PatientID));
+  const q2Snapshot = await getDocs(q);
+  console.log(q2Snapshot.empty) 
+  if (q2Snapshot.empty){
+    inQueueFlag = false;
+    
+    console.log(q2Snapshot.docs)
+  }else{
+    inQueueFlag = true;
+    document.getElementById("drop-down-for-department").innerHTML = "Already enrolled in Queue"
+    get_queueID(PatientID)
+      .then ((QueueID) =>{
+        queDetails(QueueID);
+      });
+  }
+}
 
 const logoutButton = document.getElementById('logout')
 logoutButton.addEventListener('click', () => {
@@ -62,10 +88,11 @@ async function getDocumentIdByField(email) {
 
   // Execute the query
   const querySnapshot = await getDocs(q);
-  const userdetails = []
+  
   // Loop through the results and get the document IDs
   querySnapshot.forEach((doc) => {
-    userdetails.push({ ...doc.data(), id: doc.id }) 
+    userdetails.push({ ...doc.data(), id: doc.id })
+    PatientID =  doc.id;
   });
   return userdetails[0];
 }
@@ -84,3 +111,70 @@ document.querySelector('.chatbot-container').addEventListener('click', function(
   // Your code to open the chatbot or trigger an action
   alert('Chatbot clicked!');
 });
+
+//admit to queue
+
+// Add to the queue button
+const addQueueButton = document.getElementById('addQueueButton')
+addQueueButton.addEventListener('click', addAppointment);
+
+async function addAppointment(){
+    console.log("hey", userdetails[0].id)
+    const PatientID = userdetails[0].id;
+    const department = document.getElementById("department").value;
+    const q = query(docRef, where("Specialization", "==", department));
+    const querySnapshot = await getDocs(q);
+    let DoctorID = querySnapshot.docs[0].id;
+    const QueueID = department;
+    const Appointmentdetails = {
+        PatientID: PatientID,
+        DoctorID: DoctorID,
+        QueueID: QueueID,
+        status: "scheduled",
+        AppointmentDate: serverTimestamp() ,
+      }
+    //check if already existed
+    if (!inQueueFlag) {
+      try {
+        addDoc(appRef, Appointmentdetails).then( (x) => {
+          console.log("Document written with ID: ", x);
+        });
+        const queRef1 = doc(db, "Queues", QueueID);
+        await updateDoc(queRef1, {
+          Patients: arrayUnion(PatientID),
+          currentPatientIndex: increment(1)
+        });
+        inQueueFlag = true;
+        location.reload();
+        document.getElementById("drop-down-for-department").innerHTML = "Please Wait..."
+      } catch (e) {
+        console.error("Error adding document: ", e);
+      }
+    } else {
+      console.log("user in already in queue cant addAppointment()");
+    }
+    
+  } 
+//block_admit
+async function get_queueID(PatientID) {
+  const q = query(appRef, where("PatientID", "==", PatientID));
+  const qSnap = await getDocs(q);
+  const QueueID = qSnap.docs[0].data().QueueID;
+  return QueueID
+}
+
+async function queDetails(QueueID) {
+  const queDoc = await getDoc(doc(db, 'Queues', QueueID));
+  const queData = queDoc.data();
+  const CPI = queData.currentPatientIndex;
+  const queArray = queData.Patients;
+  let queArrayLength = queArray.length;
+  let queArrayindex = queArray.indexOf(PatientID); 
+  
+  document.getElementById("queue-card-content").innerHTML = " "
+  
+}
+
+function displayQueueDetails() {
+
+}

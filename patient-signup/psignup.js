@@ -76,7 +76,8 @@ document.getElementById('psignupForm').addEventListener('submit', function(event
             lName : lastName,
             email: email,
             mobileNumber : mobileNumber,
-            gender: gender
+            gender: gender,
+            can_book_IPD: false 
         });
         console.log("Document written with ID: ");
       } catch (e) {
