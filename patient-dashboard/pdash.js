@@ -40,9 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
           displayPatientsDetails(userdetails);
           checkFlag();
         });
-        
-      //displayPatientsDetails(getDocumentIdByField(email));
-
+      checkForDoc(email);
     } else {
       // User is signed out
       alert("Please log in, you are been redirected to the login page");
@@ -52,6 +50,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   
 });
+
+const checkForDoc = async (email) => {
+  const docRef1 = doc(db, 'Doctors', "Auth_Doctors");
+  const docSnap = await getDoc(docRef1);
+  if (docSnap.exists()) {
+    if (docSnap.data().email.includes(email)) {
+        alert("You are A Doctor, Please login as a Patient or go to hospital login")
+        window.location.href = "../hospital-login/hlogin.html";
+      }
+  }
+};
 
 async function checkFlag() {
   const q = query(appRef, where("PatientID", "==", PatientID));
