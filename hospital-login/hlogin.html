@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="hlogin.css">
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <header>
+        <div class="container navbar">
+            <div class="navbar-left">
+                <div class="navbar-brand">
+                    <a href="../Landing-page/landing.html" style="text-decoration: none;">Smart HRMS</a>
+                </div>
+            </div>
+            <div class="navbar-right">
+                <a href="../Landing-page/landing.html" class="navbar-link features">Back</a>
+                <a href="./hlogin.html" class="navbar-link">Patient Login</a>
+                <a href="./hlogin.html" class="navbar-link hospital">Hospital Login</a>
+            </div>
+            <div class="navbar-toggle" id="navbar-toggle">
+                <span class="navbar-toggle-icon"></span>
+                <span class="navbar-toggle-icon"></span>
+                <span class="navbar-toggle-icon"></span>
+            </div>
+        </div>
+    </header>
+    
+    <div class="hlogin-container">
+        <div class="hlogin-card">
+            <div class="hlogin-form">
+                <h1>Login</h1>
+                <form id="hloginForm">
+                    <div class="form-group">
+                        <label for="username">Hospital ID / E-mail</label>
+                        <input type="email" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    
+                    <div class="options-group">
+                        <div class="options">
+                            <a href="#" class="forgot-password">Forgot Password?</a>
+                        </div>
+                        <div class="options">
+                            <a href="../patient-signup/psignup.html" class="dont-have-account">Don't have an account?</a>
+                        </div>
+                    </div>
+    
+                    <div class="button-group">
+                        <button type="submit" class="login-button"><strong>Login</strong></button>
+                        <a href="../hospital-signup/hsignup.html" class="signup-button"><strong>Sign Up</strong></a>
+                    </div>
+
+                    <p id="loginError" style="color:red;"></p> <!-- Error message -->
+                    
+                </form>
+            </div>
+            <div>
+                <img class="hlogin-img" src="./hospital-login.png" alt="Login Image">
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="hlogin.js"></script>
+    <!-- Firebase SDKs
+    <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js"></script>
+     -->
+</body>
+</html>

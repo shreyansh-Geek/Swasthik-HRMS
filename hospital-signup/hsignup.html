@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up Page</title>
+    <link rel="stylesheet" href="hsignup.css">
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <header>
+        <div class="container navbar">
+            <div class="navbar-left">
+                <div class="navbar-brand">
+                    <a href="../Landing-page/landing.html" style="text-decoration: none;">Smart HRMS</a>
+                </div>
+            </div>
+            <div class="navbar-right">
+                <a href="../Landing-page/landing.html" class="navbar-link features">Back</a>
+                <a href="../patient-login/plogin.html" class="navbar-link">Patient Login</a>
+                <a href="../hospital-login/hlogin.html" class="navbar-link hospital">Hospital Login</a>
+            </div>
+            <div class="navbar-toggle" id="navbar-toggle">
+                <span class="navbar-toggle-icon"></span>
+                <span class="navbar-toggle-icon"></span>
+                <span class="navbar-toggle-icon"></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="hlogin-container">
+        <div class="hlogin-card">
+            <div class="hlogin-form">
+                <h1>Sign Up</h1>
+                <form id="hsignupForm">
+                    <div class="form-group-inline">
+                        <div class="form-group">
+                            <label for="firstName">First Name*</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="middleName">Middle Name</label>
+                            <input type="text" id="middleName" name="middleName">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group-inline">
+                        <div class="form-group">
+                            <label for="countryCode">Code*</label>
+                            <input type="text" id="countryCode" name="countryCode" value="+91" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="mobileNumber">Mobile no.*</label>
+                            <input type="text" id="mobileNumber" name="mobileNumber" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password <span class="required-asterisk">*</span></label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password <span class="required-asterisk">*</span></label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        <small id="passwordMatchMessage" style="color: red; display: none;">Passwords do not match</small>
+                    </div>
+                    <div class="form-group gender-group">
+                        <label for="gender">Gender*</label>
+                        <div class="gender-options">
+                            <label>
+                                <input type="radio" id="male" name="gender" value="male" required> Male
+                            </label>
+                            <label>
+                                <input type="radio" id="female" name="gender" value="female" required> Female
+                            </label>
+                            <label>
+                                <input type="radio" id="other" name="gender" value="other" required> Other
+                            </label>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button type="submit" class="signup-button"><strong>Sign Up</strong></button>
+                    </div>
+                </form>
+            </div>
+            <div>
+                <img class="hlogin-img" src="./hospital-signup.png" alt="Login Image">
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase Script -->
+    <script type="module" src="hsignup.js"></script>
+
+</body>
+</html>
