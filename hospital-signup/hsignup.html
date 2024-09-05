@@ -36,17 +36,20 @@
                 <form id="hsignupForm">
                     <div class="form-group-inline">
                         <div class="form-group">
-                            <label for="firstName">First Name*</label>
+                            <label for="firstName">Hospital Name*</label>
                             <input type="text" id="firstName" name="firstName" required>
                         </div>
+
                         <div class="form-group">
-                            <label for="middleName">Middle Name</label>
-                            <input type="text" id="middleName" name="middleName">
+                            <label for="hospitalType">Type of Hospital*</label>
+                            <select id="hospitalType" name="hospitalType" required>
+                                <option value="public">Public</option>
+                                <option value="private">Private</option>
+                                <option value="clinic">Clinic</option>
+                                <option value="specialty">Specialty Hospital</option>
+                            </select>
                         </div>
-                        <div class="form-group">
-                            <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" name="lastName">
-                        </div>
+
                     </div>
                     <div class="form-group">
                         <label for="email">Email*</label>
@@ -58,33 +61,57 @@
                             <input type="text" id="countryCode" name="countryCode" value="+91" readonly>
                         </div>
                         <div class="form-group">
-                            <label for="mobileNumber">Mobile no.*</label>
+                            <label for="mobileNumber">Contact no.*</label>
                             <input type="text" id="mobileNumber" name="mobileNumber" required>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="password">Password <span class="required-asterisk">*</span></label>
-                        <input type="password" id="password" name="password" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="confirmPassword">Confirm Password <span class="required-asterisk">*</span></label>
-                        <input type="password" id="confirmPassword" name="confirmPassword" required>
-                        <small id="passwordMatchMessage" style="color: red; display: none;">Passwords do not match</small>
-                    </div>
-                    <div class="form-group gender-group">
-                        <label for="gender">Gender*</label>
-                        <div class="gender-options">
-                            <label>
-                                <input type="radio" id="male" name="gender" value="male" required> Male
-                            </label>
-                            <label>
-                                <input type="radio" id="female" name="gender" value="female" required> Female
-                            </label>
-                            <label>
-                                <input type="radio" id="other" name="gender" value="other" required> Other
-                            </label>
+                    
+
+                    <!-- Grouping Password and Confirm Password in one row -->
+                    <div class="form-group-inline">
+                        <div class="form-group">
+                            <label for="password">Password <span class="required-asterisk">*</span></label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password <span class="required-asterisk">*</span></label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required>
+                            <small id="passwordMatchMessage" style="color: red; display: none;">Passwords do not match</small>
                         </div>
                     </div>
+
+                    
+                    <!-- Address Section -->
+                    <div class="form-group">
+                        <label for="addressLine1">Address Line 1*</label>
+                        <input type="text" id="addressLine1" name="addressLine1" required>
+                    </div>
+
+                    <!-- Grouping City and State in one row -->
+                    <div class="form-group-inline">
+                        <div class="form-group">
+                            <label for="city">City*</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State*</label>
+                            <input type="text" id="state" name="state" required>
+                        </div>
+                    </div>
+
+                    <!-- Grouping State and Zip Code in one row -->
+                    <div class="form-group-inline">
+                        <div class="form-group">
+                            <label for="zipCode">Zip Code*</label>
+                            <input type="text" id="zipCode" name="zipCode" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="country">Country*</label>
+                            <input type="text" id="country" name="country" required>
+                        </div>
+                    </div>
+
+                    
                     <div class="button-group">
                         <button type="submit" class="signup-button"><strong>Sign Up</strong></button>
                     </div>

@@ -1,0 +1,712 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Custom font */
+body {
+    font-family: 'Roboto', 'SF Pro Display', 'Proxima', 'Helvetica Neue', sans-serif;
+    background-color: #F9FBFF;
+    color: #1E293B;
+    line-height: 1.6;
+}
+
+/* Navbar Toggle Button */
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.navbar-toggle-icon {
+    width: 30px;
+    height: 3px;
+    background-color: #1E293B;
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-right {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #bcf8ec61;
+        width: 100%;
+        padding: 1rem;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-right.active {
+        display: flex;
+    }
+
+    .navbar-toggle {
+        display: flex;
+    }
+}
+
+/* Toggle Icon Transformation */
+.navbar-toggle.active .navbar-toggle-icon:nth-child(1) {
+    transform: rotate(45deg);
+    position: relative;
+    top: 8px;
+}
+
+.navbar-toggle.active .navbar-toggle-icon:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggle.active .navbar-toggle-icon:nth-child(3) {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -8px;
+}
+
+.feature-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to right, #bcf8ec84,#691b9a3b);
+}
+
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navigation Bar */
+header {
+    background-color: #bcf8ec61;
+    padding: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: -1rem; /* Adjust this value to move logo more left */
+}
+
+.navbar-brand {
+    background-color: #6900f243;
+    color: #1E293B;
+    padding: 0.5rem 1rem;
+    border-radius: 0.6rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.navbar-right {
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar-link {
+    background-color: #1e293b;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.6rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    opacity: 0.85;
+    text-decoration: none;
+    transition: opacity 0.3s, background-color 0.3s;
+}
+
+.navbar-link.home {
+    background-color: #1E293B;
+    color: white;
+}
+
+.navbar-link:hover {
+    opacity: 1;
+    background-color: #1E293B;
+    transform: scale(1.07);
+}
+
+.navbar-link.home:hover {
+    opacity: 1;
+    background-color: #10b6b6;
+    transform: scale(1.07);
+}
+
+.navbar-link.features {
+    background-color: #1E293B; /* New color for Features link */
+    color: white;
+}
+
+
+
+.hospital-details-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto 0 auto;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.details-card {
+    background-color: #63636330;
+    padding: 30px;
+    margin-top: 2%;
+    border-radius: 20px;
+    width: 70%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.151);
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.card-header h2 {
+    font-size: 28px;
+    color: #1E293B;
+}
+
+.card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5%;
+}
+
+.hospital-info {
+    flex: 2;
+    color: #1E293B;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Adds spacing between the items */
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+}
+
+.info-item img {
+    width: 30px;
+    height: 30px;
+    margin-right: 15px; /* Space between icon and text */
+}
+
+.info-item p {
+    font-size: 18px;
+    margin: 0;
+    color: #374151;
+}
+
+.hospital-photo {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 5%;
+}
+
+.hospital-photo img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+
+.queue-card-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px; /* Adjusts margin from the top */
+}
+
+.queue-card {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, #b0a4ff9f 0%, #BCF8EC9f 100%);
+    border-radius: 20px;
+    padding: 20px;
+    width: 80%;
+    max-width: 1200px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.queue-card-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Aligns the content to the center horizontally */
+}
+
+.queue-card-content h2 {
+    font-weight: bolder;
+    font-size: 30px;
+    color: #1E293B;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.queue-card-content p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+    max-width: 500px; /* Optional: Limit the paragraph width */
+}
+
+.queue-card-content button {
+    padding: 10px 20px;
+    background-color: #0d9393b5;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.queue-card-content button:hover {
+    background-color: #0D9393;
+}
+
+.queue-card-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.queue-card-image img {
+    width: 70%;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+
+
+.pre-admission-card-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px; /* Adjusts margin from the top */
+}
+
+.pre-admission-card {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, #BCF8EC9f 0%, #b0a4ff9f 100%);
+    border-radius: 20px;
+    padding: 20px;
+    width: 80%;
+    max-width: 1200px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pre-admission-content {
+    flex: 1;
+    padding: 20px;
+    text-align: center; /* Center text horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center contents vertically */
+    align-items: center; /* Center contents horizontally */
+}
+
+.pre-admission-content h2 {
+    font-weight: bolder;
+    font-size: 30px;
+    color: #1E293B;
+    margin-bottom: 20px;
+}
+
+.pre-admission-content p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+    max-width: 500px; /* Optional: Limit the paragraph width */
+}
+
+.pre-admission-content button {
+    padding: 10px 20px;
+    background-color: #FF6B6B;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.pre-admission-content button:hover {
+    background-color: #FF5252;
+}
+
+.pre-admission-image {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+}
+
+.pre-admission-image img {
+    width: 70%;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+
+
+
+.bed-availability-card-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px; /* Adjusts margin from the top */
+}
+
+.bed-availability-card {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, #b0a4ff9f 0%, #BCF8EC9f 100%);
+    border-radius: 20px;
+    padding: 20px;
+    width: 80%;
+    max-width: 1200px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.bed-availability-content {
+    flex: 1;
+    padding: 20px;
+    text-align: center; /* Center text horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center contents vertically */
+    align-items: center; /* Center contents horizontally */
+}
+
+.bed-availability-content h2 {
+    font-weight: bolder;
+    font-size: 30px;
+    color: #1E293B;
+    margin-bottom: 20px;
+}
+
+.bed-availability-content p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+    max-width: 500px; /* Optional: Limit the paragraph width */
+}
+
+.bed-availability-content button {
+    padding: 10px 20px;
+    background-color: #10b6b6;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.bed-availability-content button:hover {
+    background-color: #0d9393b5;
+}
+
+.bed-availability-image {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+}
+
+.bed-availability-image img {
+    width: 70%;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+
+
+
+.health-records-card-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px; /* Adjusts margin from the top */
+}
+
+.health-records-card {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, #BCF8EC9f 0%, #b0a4ff9f 100%);
+    border-radius: 20px;
+    padding: 20px;
+    width: 80%;
+    max-width: 1200px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.health-records-content {
+    flex: 1;
+    padding: 20px;
+    text-align: center; /* Center text horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center contents vertically */
+    align-items: center; /* Center contents horizontally */
+}
+
+.health-records-content h2 {
+    font-weight: bolder;
+    font-size: 30px;
+    color: #1E293B;
+    margin-bottom: 20px;
+}
+
+.health-records-content p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+    max-width: 500px; /* Optional: Limit the paragraph width */
+}
+
+.health-records-content button {
+    padding: 10px 20px;
+    background-color: #FF6B6B;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.health-records-content button:hover {
+    background-color: #FF5252;
+}
+
+.health-records-image {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+}
+
+.health-records-image img {
+    width:60%;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+
+
+
+.feedback-form-card-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px; /* Adjusts margin from the top */
+}
+
+.feedback-form-card {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, #b0a4ff9f 0%, #BCF8EC9f 100%);
+    border-radius: 20px;
+    padding: 20px;
+    width: 80%;
+    max-width: 1200px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-form-content {
+    flex: 1;
+    padding: 20px;
+    text-align: center; /* Center text horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center contents vertically */
+    align-items: center; /* Center contents horizontally */
+}
+
+.feedback-form-content h2 {
+    font-weight: bolder;
+    font-size: 30px;
+    color: #1E293B;
+    margin-bottom: 20px;
+}
+
+.feedback-form-content p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+    max-width: 500px; /* Optional: Limit the paragraph width */
+}
+
+.feedback-form-content button {
+    padding: 10px 20px;
+    background-color: #10b6b6;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.feedback-form-content button:hover {
+    background-color: #0d9393b5;
+}
+
+.feedback-form-image {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+}
+
+.feedback-form-image img {
+    width: 97%;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+
+
+/* Chatbot Button */
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;  /* Distance from the bottom */
+    right: 40px;   /* Increased the value to shift it left from the right edge */
+    width: 80px;   /* Increased the size of the button */
+    height: 80px;  /* Increased the size of the button */
+    background-color: #1E293B; /* Circular background */
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for better visibility */
+    z-index: 1000;  /* Ensure it stays on top of other elements */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
+}
+
+/* Chatbot Image */
+.chatbot-icon {
+    width: 85%;
+    height: 85%;
+    border-radius: 50%; /* Ensure the image is circular */
+}
+
+/* Hover Effect */
+.chatbot-container:hover {
+    transform: scale(1.1); /* Slightly scale up the button */
+}
+
+.chatbot-container::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 2px solid rgba(30, 41, 59, 0.5); /* Circular lines with some transparency */
+    border-radius: 50%;
+    animation: rotate 2s linear infinite; /* Rotating animation */
+    z-index: -1; /* Place it behind the button */
+}
+
+/* Rotate Animation */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Footer Section */
+.footer-section {
+    margin-top: 7%;
+    background-color: #1E293B; /* Dark background color */
+    color: #FFFFFF; /* White text color */
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+
+/* Footer Logo */
+.footer-logo img {
+    width: 150px; /* Adjust the logo size */
+    margin-bottom: 1rem;
+}
+
+/* Footer Links */
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-links ul li {
+    display: inline;
+}
+
+.footer-links ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #BCF8EC; /* Color on hover */
+}
+
+/* Footer Social Icons */
+.footer-social a {
+    margin: 0 10px;
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.footer-social a img {
+    width: 30px; /* Adjust the icon size */
+}
+
+.footer-social a:hover {
+    transform: scale(1.1); /* Scale effect on hover */
+}
+
+/* Footer Copyright */
+.footer-copyright {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    line-height: 1.5;
+}
+

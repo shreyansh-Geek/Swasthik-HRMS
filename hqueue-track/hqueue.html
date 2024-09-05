@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Queue</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="hqueue.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="queue-info">
+            <h2>Total Patients Now in Queue:</h2>
+            <div class="queue-box" id="queueCount">0</div>
+        </div>
+        <h1 class="title">Next Patient in Queue</h1>
+
+        <div class="patient-info">
+            <!-- Patient Personal Details -->
+            <div class="patient-details">
+                <h3>Patient Details</h3>
+                <p><strong>Name:</strong> <span id="patientName">John Doe</span></p>
+                <p><strong>Contact Number:</strong> <span id="patientContact">+91 9876543210</span></p>
+                <p><strong>Email:</strong> <span id="patientEmail">johndoe@example.com</span></p>
+                <p><strong>Gender:</strong> <span id="patientGender">Male</span></p>
+            </div>
+
+            <!-- Patient Health Details -->
+            <div class="health-details">
+                <h3>Health Details</h3>
+                <p><strong>Temperature:</strong> <span id="patientTemperature">98.6°F</span></p>
+                <p><strong>Blood Pressure:</strong> <span id="patientBloodPressure">120/80 mmHg</span></p>
+                <p><strong>Oxygen Levels:</strong> <span id="patientOxygen">98%</span></p>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button id="nextPatientButton">Next Patient</button>
+        </div>
+    </div>
+
+    <script src="hqueue.js"></script>
+
+</body>
+</html>

@@ -160,7 +160,7 @@ header {
     align-items: center;
     justify-content: space-between;
     width: 97%;
-    height: 1000px;
+    height: 1100px;
     padding: 2rem;
     background: linear-gradient(to right, #0d939356, #691b9a56);
     border-radius: 25px;
@@ -170,7 +170,7 @@ header {
 
 /* Login Form */
 .hlogin-form {
-    margin-top: 10%;
+    margin-top: 0%;
     margin-left: 15%;
     width: 70%;
     height: 89%;
@@ -220,6 +220,17 @@ small {
     color: #6B7280;
 }
 
+
+.form-group-inline {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-group-inline .form-group {
+    width: 48%; /* Adjust based on your spacing preference */
+}
+
+
 .button-group {
     text-align: center;
     margin-top: 1rem;
@@ -248,6 +259,16 @@ small {
     margin-left: auto;
     height: auto;
     border-radius: 15px;
+}
+
+
+.form-group-inline {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-group-inline .form-group {
+    width: 48%; /* Adjust based on spacing preferences */
 }
 
 
