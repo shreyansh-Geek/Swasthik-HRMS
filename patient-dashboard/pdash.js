@@ -150,8 +150,7 @@ async function addAppointment(){
         });
         const queRef1 = doc(db, "Queues", QueueID);
         await updateDoc(queRef1, {
-          Patients: arrayUnion(PatientID),
-          currentPatientIndex: increment(1)
+          Patients: arrayUnion(PatientID)
         });
         inQueueFlag = true;
         location.reload();
@@ -180,10 +179,27 @@ async function queDetails(QueueID) {
   let queArrayLength = queArray.length;
   let queArrayindex = queArray.indexOf(PatientID); 
   
-  document.getElementById("queue-card-content").innerHTML = " "
+  displayQueueDetails(queArrayindex, CPI);
+  
   
 }
 
-function displayQueueDetails() {
+function displayQueueDetails(queArraynumber, CPI) {
+  document.getElementById("queue-card-content").innerHTML = "";
+  const ele = document.getElementById("queue-card-content")
 
+  // Create a new paragraph element
+  const h2 = document.createElement('h2');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
+  // set the content
+  h2.textContent = "Queue Status";
+  p1.textContent = "Your Queue Number is : " + queArraynumber;
+  p2.textContent = "Doctor is at : " + (CPI -1);
+  p3.textContent = "Your Turn Will Be After : " + (queArraynumber - (CPI -1));
+  ele.appendChild(h2);
+  ele.appendChild(p1);
+  ele.appendChild(p2);
+  ele.appendChild(p3);
 }
