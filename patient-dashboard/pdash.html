@@ -31,7 +31,6 @@
         </div>
     </header>
 
-
 <!-- Patient Details Card -->
 <div class="patient-details-container">
     <div class="details-card">
@@ -42,19 +41,19 @@
             <div class="patient-info">
                 <div class="info-item">
                     <img src="./id-card.png" alt="Full Name Icon">
-                    <p><strong>Full Name:</strong> <span id="fullName">__________</span></p>
+                    <p><strong>Full Name:</strong> <span id="fullName">LOADING...</span></p>
                 </div>
                 <div class="info-item">
                     <img src="./add-contact.png" alt="Contact Icon">
-                    <p><strong>Contact No.:</strong> <span id="contactNo">__________</span></p>
+                    <p><strong>Contact No.:</strong> <span id="contactNo">LOADING...</span></p>
                 </div>
                 <div class="info-item">
                     <img src="./email.png" alt="Email Icon">
-                    <p><strong>Email:</strong> <span id="email">__________</span></p>
+                    <p><strong>Email:</strong> <span id="email">LOADING...</span></p>
                 </div>
                 <div class="info-item">
                     <img src="./male-and-female.png" alt="Gender Icon">
-                    <p><strong>Gender:</strong> <span id="gender">__________</span></p>
+                    <p><strong>Gender:</strong> <span id="gender">LOADING...</span></p>
                 </div>
             </div>
             <div class="patient-photo">
@@ -64,9 +63,6 @@
     </div>
 </div>
 
-
-
-
 <div id="#features" class="features">
         <!-- Queue Number Check Card -->
         <div class="queue-card-container">
@@ -74,22 +70,36 @@
                 <div class="queue-card-image">
                     <img src="./opd queue.png" alt="Queue Image">
                 </div>
-                <div class="queue-card-content">
-                    <h2>Check Queue number in OPD</h2>
-                    <input type="text" placeholder="Enter Your Token ID" id="queueNumberInput">
-                    <button id="checkQueueButton" onclick="location.href='../pqueue-check/pqueue.html' ">Check</button>
+                <div class="queue-card-content" id="queue-card-content">
+                    <h2>Add to OPD Queue</h2>
+                    <form>
+                    <div id="drop-down-for-department">
+                        <label for="department">Department:</label>
+                        <select id="department" name="department" required>
+                            <option value="">-- Select Department --</option>
+                            <option value="Gen">General Health Checkup</option>
+                            <option value="Heart Care (Cardiology)">Heart Care (Cardiology)</option>
+                            <option value="Bone and Joint Care (Orthopedics)">Bone and Joint Care (Orthopedics)</option>
+                            <option value="Child Care (Pediatrics)">Child Care (Pediatrics)</option>
+                            <option value="Women's Health (Gynecology)">Women's Health (Gynecology)</option>
+                            <option value="Skin Care (Dermatology)">Skin Care (Dermatology)</option>
+                            <option value="Mental Health (Psychiatry)">Mental Health (Psychiatry)</option>
+                            <option value="Eye Care (Ophthalmology)">Eye Care (Ophthalmology)</option>
+                            <option value="Cancer Care (Oncology)">Cancer Care (Oncology)</option>
+                        </select>
+                    </div>
+                    </form>
+                    <button id="addQueueButton" >Add</button>
                 </div>
-                
+                <div id="queue-info"></div>
             </div>
         </div>
-    
-    
-        <!-- Patient Pre-Admission Form Card -->
+
+    <!-- Patient Pre-Admission Form Card -->
     <div class="pre-admission-card-container">
         <div class="pre-admission-card">
             
-            <div 
-            class="pre-admission-content">
+            <div class="pre-admission-content">
                 <h2>Pre-Admission in IPD</h2>
                 <p>Complete your IPD registration by filling out the necessary details.</p>
                 <button onclick="location.href='../pipd-admit/padmit.html'">Apply</button>
@@ -146,9 +156,6 @@
         </div>
     </div>
 </div>
-
-
-
 
  <!--Chatbot section-->
         <div class="chatbot-container">
